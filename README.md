@@ -1,10 +1,10 @@
-# 🏁 Race Lap Tracker
+# Race Lap Tracker
 
 เว็บแอปบันทึกเวลาต่อรอบการแข่งขัน (F1 / GT3 / GT4 / Hypercar / TCR) สร้างด้วย **Node.js + Express** ฝั่งเซิร์ฟเวอร์เป็น REST API ที่เก็บข้อมูลในไฟล์ JSON ส่วนฝั่งไคลเอนต์เป็น HTML + CSS + JavaScript ล้วน ที่เรียก API ของตัวเองด้วย `fetch()` และอัปเดตหน้าเว็บทันทีโดยไม่ต้องรีเฟรช
 
-> 📄 รายงานฉบับเต็มพร้อม screenshots: [`docs/Report.pdf`](docs/Report.pdf)
+> รายงานฉบับเต็มพร้อม screenshots: [`docs/Report.pdf`](docs/Report.pdf)
 
-## ✨ ความสามารถ
+## ความสามารถ
 
 | ฟีเจอร์ | วิธีทำงาน |
 |---|---|
@@ -18,7 +18,7 @@
 
 ฝั่งไคลเอนต์เรียกเฉพาะ API ของตัวเอง (`/api/laps`) เท่านั้น ไม่มีการดึงข้อมูลจาก API ภายนอก (มีเพียงการโหลดฟอนต์ Google Fonts สำหรับตกแต่งหน้าตา ซึ่งไม่ใช่ข้อมูลของแอป และถ้าโหลดไม่ได้ก็จะใช้ฟอนต์สำรอง)
 
-## 📁 โครงสร้างโปรเจกต์
+## โครงสร้างโปรเจกต์
 
 ```
 Race Lap Tracker/
@@ -37,7 +37,7 @@ Race Lap Tracker/
 └── README.md
 ```
 
-## 🚀 วิธีติดตั้งและรัน
+## วิธีติดตั้งและรัน
 
 ต้องมี [Node.js](https://nodejs.org) เวอร์ชัน 18 ขึ้นไป (สคริปต์ `dev` ใช้ `node --watch`)
 
@@ -106,7 +106,7 @@ curl -X POST http://localhost:3000/api/laps \
   -d '{"trackName":"Monza","carModel":"Ferrari SF-26","carClass":"Formula","lapTime":"1:21.500"}'
 ```
 
-## 🐞 ภาพหลักฐานการดีบัก
+## ภาพหลักฐานการดีบัก
 
 **ภาพที่ 1 – ทดสอบ API ด้วย curl** (ครอบคลุมทั้งกรณีสำเร็จ 200/201/204 และกรณีผิดพลาด 400/403/404)
 
@@ -116,7 +116,7 @@ curl -X POST http://localhost:3000/api/laps \
 
 ![Network log](docs/screenshots/debug-2-network-log.png)
 
-## 🖼️ Screenshots
+## Screenshots
 
 | รายการ (ไทย) | รายการ (อังกฤษ) |
 |---|---|
@@ -127,9 +127,3 @@ curl -X POST http://localhost:3000/api/laps \
 | ![](docs/screenshots/05-edit-mode.png) | ![](docs/screenshots/06-after-edit.png) |
 
 ดูภาพทั้งหมด (ฟิลเตอร์ ลบ มือถือ ฯลฯ) ได้ใน [`docs/Report.pdf`](docs/Report.pdf)
-
-## 📝 หมายเหตุ
-
-- โปรเจกต์นี้ต้องรันเซิร์ฟเวอร์ Node.js จึง **ไม่สามารถใช้ GitHub Pages ได้** ให้โคลน repository แล้วรันบนเครื่องตามขั้นตอนข้างต้น
-- ข้อมูลเก็บใน `server/data/laps.json` และจะถูกเขียนทับเมื่อมีการเพิ่ม/แก้ไข/ลบ
-- ข้อกำหนดข้อ "PATCH/PUT": โปรเจกต์นี้ใช้ **PUT** สำหรับการแก้ไข
