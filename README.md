@@ -57,7 +57,7 @@ npm start
 
 จากนั้นเปิดเบราว์เซอร์ที่ <http://localhost:3000> (เปลี่ยนพอร์ตได้ด้วย `PORT=4000 npm start`)
 
-## 🔌 รายการ Endpoint
+## รายการ Endpoint
 
 Base URL: `http://localhost:3000/api/laps`
 
